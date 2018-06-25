@@ -1,0 +1,32 @@
+.content {
+  background-color: #ddc;
+  height: 1500px;
+  bottom: auto;
+  padding: 10px;
+  float: left;
+  width: 100%;
+}
+
+.footer {
+  float: left;
+  width: 87%;
+  background-color: #000;
+  position: fixed;
+  z-index: 999999;
+  bottom: 0;
+  border-radius: 5px;
+}
+
+.img {
+	width: 100px;
+	height: 200px;
+}
+
+.bigImg {
+  width: 200px;
+  height: 400px;
+}
+
+.btn-warning {
+  color: #000;
+}
