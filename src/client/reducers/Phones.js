@@ -1,4 +1,11 @@
-import { ADD_TO_COMPARE, GET_PHONES, REMOVE_FROM_COMPARE } from '../constants/ActionTypes.js';
+import axios from 'axios';
+import {
+    ADD_TO_COMPARE,
+    FETCH_BRAND_PHONES,
+    REMOVE_FROM_COMPARE,
+    SAVE_BRANDS_TO_STORE,
+    SAVE_PHONES_TO_STORE,
+} from '../constants/ActionTypes.js';
 import { toast } from 'react-toastify';
 
 let phones = [
@@ -29,6 +36,7 @@ let phones = [
     "image": "https://cdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-j7-2018-.jpg"
   },
   {
+    "id": 2,
     "model": "Sony Xperia XZ2 Premium",
     "Release date": "April 2018",
     "Form factor": "Touchscreen",
@@ -73,6 +81,7 @@ let phones = [
     "Gyroscope": "Yes"
   },
   {
+    "id": 3,    
     "model": "HTC U12+",
     "Release date": "May 2018",
     "Form factor": "Touchscreen",
@@ -121,6 +130,7 @@ let phones = [
     "Temperature sensor": "No"
   },
   {
+    "id": 4,    
     "model": "Moto Z3 Play",
     "Release date": "June 2018",
     "Form factor": "Touchscreen",
@@ -164,7 +174,8 @@ let phones = [
 ];
 
 var compareList = [];
-export const Phones = (state = { phones, compareList } , action) => {
+var brands = [];
+export const Phones = (state = { brands, phones, compareList } , action) => {
   function notify(msg) {
     toast(msg);
   }
@@ -183,8 +194,17 @@ export const Phones = (state = { phones, compareList } , action) => {
           compareList: temp,
       }
 
+    // case FETCH_BRAND_PHONES:
+    //   temp = [...state.compareList];
+    //   var index = temp.indexOf(action.payload);
+    //   temp.splice(index, 1);
+    //   return {
+    //     ...state,
+    //     compareList: temp,
+    //   }
+
     case REMOVE_FROM_COMPARE:
-      var temp = [...state.compareList];
+      temp = [...state.compareList];
       var index = temp.indexOf(action.payload);
       temp.splice(index, 1);
       return {
@@ -192,6 +212,22 @@ export const Phones = (state = { phones, compareList } , action) => {
         compareList: temp,
       }
       
+    case SAVE_BRANDS_TO_STORE:
+    debugger;
+    temp = action.payload;
+      return {
+        ...state,
+        brands: temp,
+      }
+
+    case SAVE_PHONES_TO_STORE:
+    debugger;
+    temp = action.payload;
+      return {
+        ...state,
+        phones: temp,
+      }
+
     default:
       return state;
   }

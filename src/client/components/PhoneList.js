@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import CompareArea from '../components/CompareArea.js';
 import { Link } from 'react-router-dom';
 
 class PhoneList extends Component {
+  componentWillMount() {
+    debugger;
+    axios.get('http://localhost:5000/phones')
+     .then((data) => {
+        this.props.savePhonesToStore(data.data);
+    });
+  }
+
   render() {
     debugger;
+    console.log(this.props.brands);
     return (
       <div className="list" id="Home">
         {
@@ -12,7 +22,7 @@ class PhoneList extends Component {
             return (
               <div key={phone.id} className='col-md-3 text-center'>
                 <h4><strong>{phone.model}</strong></h4>
-                <Link to={`/model/${phone.model}`}><img src={phone.image} className='img' alt={phone.model} title={phone.model}/></Link>
+                <Link to={`/model/${phone.id}`}><img src={phone.image} className='img' alt={phone.model} title={phone.model}/></Link>
                 <p>Release date: {phone[ 'Release date' ]}</p>
                 <button className='btn btn-info btn-md' onClick={this.props.addToCompare.bind(this, phone)}>Add To Compare</button>
               </div>

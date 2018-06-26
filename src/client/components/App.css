@@ -1,6 +1,7 @@
 .content {
   background-color: #ddc;
-  height: 1500px;
+  min-height: 1500px;
+  height: auto;
   bottom: auto;
   padding: 10px;
   float: left;
@@ -29,4 +30,8 @@
 
 .btn-warning {
   color: #000;
+}
+
+p {
+  font-size: 14px;
 }

@@ -1,12 +1,17 @@
 import PhoneList from '../components/PhoneList.js';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { addToCompare, removeFromCompare } from '../actions/actions.js';
+import {
+  addToCompare,
+  removeFromCompare,
+  savePhonesToStore,
+} from '../actions/actions.js';
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     addToCompare,
     removeFromCompare,
+    savePhonesToStore,
   }, dispatch);
 }
 
@@ -18,6 +23,4 @@ function mapStateToProps(state) {
   }
 }
 
-// const PhoneListWithData = 
 export default connect(mapStateToProps, mapDispatchToProps)(PhoneList);
- // PhoneListWithData;
