@@ -1,6 +1,5 @@
 .content {
   background-color: #ddc;
-  min-height: 1500px;
   height: auto;
   bottom: auto;
   padding: 10px;
@@ -10,9 +9,8 @@
 
 .footer {
   float: left;
-  width: 87%;
+  width: 100%;
   background-color: #000;
-  position: fixed;
   z-index: 999999;
   bottom: 0;
   border-radius: 5px;
@@ -24,14 +22,18 @@
 }
 
 .bigImg {
-  width: 200px;
-  height: 400px;
+  width: 250px;
+  height: 500px;
 }
 
 .btn-warning {
   color: #000;
 }
 
-p {
+span {
   font-size: 14px;
+  font-weight: bold;
+}
+.para {
+  height: 180px;
 }

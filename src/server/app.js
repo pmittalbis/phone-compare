@@ -22,7 +22,6 @@ const PORT = 5000;
 server.get('/brands', function(req, res) {
   Brands.find({}, (err, data) => {
     if (err) { console.log('Error ', err); }
-    console.log(data);
     res.send(data);
   });
 })
@@ -30,9 +29,13 @@ server.get('/brands', function(req, res) {
 server.get('/phones', function(req, res) {
   Phones.find({}, (err, data) => {
     if (err) { console.log('Error ', err); }
-    console.log(data);
     res.send(data);
   });
+})
+
+server.get('/details', async function(req, res) {
+  const data = await PhoneDetails.find({});
+  res.send(data);
 })
 
 server.listen(PORT, () => { console.log(`Server is now running at Port ${PORT}`); });

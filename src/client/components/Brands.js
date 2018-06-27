@@ -16,7 +16,7 @@ class Brands extends Component {
       <div className="container">
         {
           this.props.brands.map((brand) => {
-            return <Link to={`/brand/${brand._id}`}><p>{brand.name}</p></Link>
+            return <Link to={`/brand/${brand._id}`} key={brand._id}><span>| {brand.name} </span></Link>
           })
         }
       </div>

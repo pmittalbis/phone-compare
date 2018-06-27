@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
   addToCompare,
+  fetchPhones,
   removeFromCompare,
   savePhonesToStore,
 } from '../actions/actions.js';
@@ -10,6 +11,7 @@ import {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     addToCompare,
+    fetchPhones,
     removeFromCompare,
     savePhonesToStore,
   }, dispatch);

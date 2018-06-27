@@ -4,14 +4,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import BrandsWithData from '../containers/BrandsWithData.js';
 import Header from './Header.js';
 import Footer from './Footer.js';
-import Router from '../router/index.js';
 import PhoneListWithData from '../containers/PhoneListWithData.js';
 import './App.css';
 
 class App extends Component {
-  componentWillMount() {
-
-  }
   render() {
     return (
       <div className="container">
