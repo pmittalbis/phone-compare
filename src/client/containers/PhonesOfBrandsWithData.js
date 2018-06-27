@@ -9,4 +9,11 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(PhonesOfBrand);
+function mapStateToProps(state) {
+  debugger;
+  return {
+    filteredPhones: state.Phones.brandPhones,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PhonesOfBrand);
